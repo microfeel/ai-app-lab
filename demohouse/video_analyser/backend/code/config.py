@@ -9,8 +9,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-VLM_ENDPOINT = "<ENDPOINT_ID_FOR_DOUBAO_VISION_PRO>"
-LLM_ENDPOINT = "<ENDPOINT_ID_FOR_LLM>"  # 256K model for a short term memory
-
-TTS_APP_ID = "<TTS_APP_ID>"
-TTS_ACCESS_TOKEN = "<TTS_ACCESS_TOKEN>"
+VLM_ENDPOINT = "ep-20250705120931-tz42z"
+LLM_ENDPOINT = "ep-20250705121149-fp6k8"  # 256K model for a short term memory

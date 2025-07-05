@@ -215,37 +215,18 @@ async def default_model_calling(
         )
         return
 
-    # Initialize TTS connection asynchronously before launching LLM request to reduce latency
-    tts_client = AsyncTTSClient(
-        connection_params=ConnectionParams(
-            speaker="zh_female_tianmeixiaoyuan_moon_bigtts",
-            audio_params=AudioParams(
-                format="mp3",
-                sample_rate=24000,
-            ),
-        ),
-        access_key=TTS_ACCESS_TOKEN,
-        app_key=TTS_APP_ID,
-        conn_id=get_reqid(),
-        log_id=get_reqid(),
-    )
-    connection_task = asyncio.create_task(tts_client.init())
-
     # Use LLM and VLM to answer user's question
     # Received a response iterator from LLM or VLM
     response_iter = await chat_with_branches(contexts, request, parameters, context_id)
-    await connection_task
     message = ""
-    tts_stream_output = tts_client.tts(response_iter, stream=request.stream)
-    async for resp in create_bot_audio_responses(tts_stream_output, request):
+    async for resp in response_iter:
         if isinstance(resp, ArkChatCompletionChunk):
-            if len(resp.choices) > 0 and hasattr(resp.choices[0].delta, "audio"):
-                message += resp.choices[0].delta.audio.get("transcript", "")
+            if len(resp.choices) > 0 and resp.choices[0].delta.content:
+                message += resp.choices[0].delta.content
         else:
-            if len(resp.choices) > 0 and resp.choices[0].message.audio:
-                message += resp.choices[0].message.audio.transcript
+            if len(resp.choices) > 0 and resp.choices[0].message.content:
+                message += resp.choices[0].message.content
         yield resp
-    await tts_client.close()
     text = ""
     if isinstance(request.messages[-1].content, list) and isinstance(
         request.messages[-1].content[0], ChatCompletionMessageTextPart

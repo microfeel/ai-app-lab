@@ -14,5 +14,5 @@ set -ex
 # shellcheck disable=SC2046
 cd `dirname $0`
 export PYTHONPATH=$PYTHONPATH:/opt/bytefaas/site-packages
-export ARK_API_KEY=<YOUR API KEY>
+export ARK_API_KEY="f90fec9f-68ef-4afa-a040-3e1a53e25482"
 poetry run python code/main.py

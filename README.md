@@ -7,7 +7,7 @@
 ![img](./docs/assets/architecture.png)
 ## Arkitect
 
-> https://github.com/volcengine/ai-app-lab/tree/main/arkitect  
+> https://github.com/microfeel/ai-app-lab/tree/main/arkitect  
 
 
 火山方舟提供的用于开发高代码应用的 Python SDK，面向具有专业开发能力的开发者，提供开发大模型应用需要用到的工具集和流程集。更多介绍见 [高代码 SDK Arkitect](./arkitect/README.md)。  

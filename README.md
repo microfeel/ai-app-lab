@@ -14,7 +14,7 @@
 
 ## Demohouse
 
-> https://github.com/volcengine/ai-app-lab/tree/main/demohouse  
+> https://github.com/microfeel/ai-app-lab/tree/main/demohouse  
 
 
 从大模型可以落地的业务提效、企业经营效率提效两大场景切入，沉淀了教师分身、安卓终端、复杂问题思考等多个垂直领域的 AI 原型应用，并开源所有代码。助力中小企业“一键复制”，完成基础应用搭建，随后加入个性化的行业 Know-How 和企业内部业务逻辑，快速步入应用落地的实干阶段。  

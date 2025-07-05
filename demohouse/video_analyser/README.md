@@ -1,4 +1,5 @@
 # 视频实时理解 Video Analyser
+
 ## 应用介绍
 
 这是一款基于豆包-视觉理解模型实现的具有视频通话功能的应用。它能够对摄像头传输的实时画面进行分析，精准理解画面中的关键信息，包括图表论文、人物表情、动作细节、场景环境等。同时支持高清流畅的视频通话，实现和大模型面对面的即时交流体验。
@@ -42,9 +43,10 @@
     git clone https://github.com/volcengine/ai-app-lab.git
     cd demohouse/video_analyser
    ```
+
 2. 修改配置
 
-   - 修改`backend/code/config.py` 中配置，填入刚刚获取的API keys， endpoint id 和 APP ID和 Access Token 
+   - 修改`backend/code/config.py` 中配置，填入刚刚获取的API keys， endpoint id 和 APP ID和 Access Token
 
      | 配置变量名   | 说明                              |
      | ------------ | --------------------------------- |
@@ -55,7 +57,6 @@
 
    - 修改 `frontend/run.sh` 中配置，填入刚刚获取的APP ID和 Access Token
 
-
      | 配置变量名       | 说明                          |
      | ---------------- | ----------------------------- |
      | ASR_APP_ID           | 流式语音识别模型  APP ID |
@@ -63,10 +64,10 @@
 
    - 修改 `backend/run.sh` 中配置，填入刚刚获取的API key
 
-
      | 配置变量名  | 说明             |
      | ----------- | ---------------- |
      | ARK_API_KEY | 火山方舟 API Key |
+
 3. 安装后端依赖
 
    ```bash
@@ -78,12 +79,14 @@
 
    poetry install
    ```
+
 4. 启动后端
 
    ```bash
    cd demohouse/video_analyser/backend
    bash run.sh
    ```
+
 5. 启动前端
 
    ```bash
